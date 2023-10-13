@@ -1,8 +1,147 @@
+import { updateProfile } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import Swal from "sweetalert2";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const SignUpPage = () => {
+   const [showPass, setShowPass] = useState(false);
+   const { registerWithEmailPass } = useContext(AuthContext)
+   const navigate = useNavigate()
+   const handleSignUp = (e) => {
+      e.preventDefault();
+      const name = e.target.name.value;
+      const photo = e.target.photo.value;
+      const email = e.target.email.value;
+      const password = e.target.password.value;
+      const terms = e.target.terms.checked;
+      console.log(email, password, terms, name, photo);
+
+      if (password.length < 6) {
+         Swal.fire({
+            icon: 'error',
+            title: 'Password must be 6 characters or more',
+         })
+         return;
+      }
+      else if (!/[A-Z]/.test(password)) {
+         Swal.fire({
+            icon: 'error',
+            title: 'Password must be contain atleast one Uppercase character',
+         })
+         return;
+      }
+      else if (!/[@$! %*?&]/.test(password)) {
+         Swal.fire({
+            icon: 'error',
+            title: 'Password must be contain atleast one Special character',
+         })
+         return;
+      }
+      if (!terms) {
+         Swal.fire({
+            icon: 'error',
+            title: 'You must agree to the terms and conditions',
+         })
+         return;
+      }
+
+      // Create a new user account
+      registerWithEmailPass(email, password)
+         .then(result => {
+            // console.log(result.user);
+            updateProfile(result.user, { displayName: name, photoURL: photo })
+               .then(result => { console.log(result.user) })
+               .catch(error => { console.error(error.message) })
+
+            Swal.fire({
+               icon: 'success',
+               title: 'Sucessfully Registered',
+            })
+            navigate('/')
+         })
+         .catch(error => {
+            console.error(error.message);
+            Swal.fire({
+               icon: 'error',
+               title: 'You are already registered',
+               text: `Please Login!`,
+            })
+            navigate('/login')
+         })
+   }
    return (
       <div>
-         
+         <div className="flex min-h-[calc(100vh-100px)] items-center justify-center">
+            <div className="relative w-[450px]  rounded-3xl bg-orange-500">
+
+               <div className=" py-10 px-10 flex  w-full flex-col rounded-3xl bg-slate-200 bg-opacity-20 shadow">
+                  <form onSubmit={handleSignUp} className="text-center">
+                     <div className="group relative mb-5">
+                        <input type="text" id="name" name="name" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
+                        <label htmlFor="name" className="absolute left-2 top-0 flex h-full transform items-center pl-2 text-base transition-all duration-500 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white">Your Name</label>
+                     </div>
+                     <div className="group relative mb-5">
+                        <input type="url" id="photoUrl" name="photoUrl" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
+                        <label htmlFor="photoUrl" className="absolute left-2 top-0 flex h-full transform items-center pl-2 text-base transition-all duration-500 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white">Photo URL</label>
+                     </div>
+                     <div className="group relative mb-5">
+                        <input type="email" id="email" name="email" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
+                        <label htmlFor="email" className="absolute left-2 top-0 flex h-full transform items-center pl-2 text-base transition-all duration-500 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white">Email</label>
+                     </div>
+
+                     <div className="group relative mb-5">
+                        <input type={showPass ? 'text' : 'password'} name="password" id="password" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
+                        <label htmlFor="password" className="absolute left-2 top-0 flex h-full transform items-center pl-2 text-base transition-all duration-500 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white">Password</label>
+
+                        <div onClick={() => setShowPass(!showPass)} className="absolute right-4 top-[15px] text-3xl">
+                           {
+                              showPass ? <AiFillEyeInvisible className="text-red-500" /> : <AiFillEye />
+                           }
+                        </div>
+
+                     </div>
+                     <div className="flex justify-center items-center mb-3">
+                        <input type="checkbox" name="terms" id="terms" className="w-4 h-4" />
+                        <label htmlFor="terms" className=" text-gray-600 ml-1">I agree to the <a href="#" className="text-blue-500 hover:text-blue-600">terms and conditions</a></label>
+                     </div>
+
+                     <button type="submit" className="h-14 mb-5 w-full rounded-3xl bg-blue-900 text-white transition-all duration-300 hover:bg-blue-800">Sign Up</button>
+
+                     <p className="gap-2 text-center text-white">
+                        <span>Already have an account? </span>
+                        <Link to="/login" className="font-semibold text-blue-900 hover:text-blue-600"> Login</Link>
+                     </p>
+                  </form>
+
+                  <div className="text-center space-y-3">
+
+                     <a href="#" className="group border-white-500 group m-auto  mt-5 inline-flex h-12 w-[320px] items-center justify-center gap-2  rounded-3xl border px-4 py-2 transition-colors duration-300  hover:bg-[#34A353] hover:border-[#34A353] focus:outline-none">
+                        <span>
+                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15.5005 8.18332C15.5005 7.66664 15.4505 7.13331 15.3671 6.6333H8.15039V9.58333H12.2838C12.1171 10.5333 11.5671 11.3667 10.7504 11.9L13.2171 13.8167C14.6671 12.4667 15.5005 10.5 15.5005 8.18332Z" fill="white" />
+                              <path d="M8.14981 15.6501C10.2165 15.6501 11.9499 14.9668 13.2165 13.8001L10.7498 11.9001C10.0665 12.3668 9.18316 12.6334 8.14981 12.6334C6.14979 12.6334 4.46644 11.2834 3.84977 9.4834L1.31641 11.4334C2.61642 14.0168 5.24978 15.6501 8.14981 15.6501Z" fill="white" />
+                              <path d="M3.84978 9.46695C3.53311 8.51694 3.53311 7.48359 3.84978 6.53358L1.31642 4.56689C0.23307 6.73358 0.23307 9.28361 1.31642 11.4336L3.84978 9.46695Z" fill="white" />
+                              <path d="M8.14981 3.38327C9.23316 3.3666 10.2998 3.78327 11.0832 4.53328L13.2665 2.33326C11.8832 1.03324 10.0498 0.333233 8.14981 0.3499C5.24978 0.3499 2.61642 1.98325 1.31641 4.56661L3.84977 6.5333C4.46644 4.71661 6.14979 3.38327 8.14981 3.38327Z" fill="white" />
+                           </svg>
+
+                        </span>
+                        <span className="text-sm font-medium text-white ">Google</span>
+                     </a>
+
+                     <a href="#" className="border-white-500 group m-auto my-0 inline-flex h-12 w-[320px] items-center justify-center gap-2  rounded-3xl border px-4 py-2 transition-colors duration-300 hover:border-black hover:bg-black focus:outline-none">
+                        <span>
+                           <svg className="h-5 w-5 fill-current text-white" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+                              <path fillRule="text-white" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                           </svg>
+                        </span>
+                        <span className="text-sm font-medium text-white">Github</span>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
    );
 };
