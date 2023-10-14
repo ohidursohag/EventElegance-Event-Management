@@ -66,7 +66,7 @@ const LoginPage = () => {
    return (
       <div >
          <div className="flex min-h-[calc(100vh-100px)] items-center justify-center">
-            <div className="relative h-auto w-[450px]  rounded-3xl bg-orange-500">
+            <div className="relative h-auto max-w-[450px] m rounded-3xl bg-orange-500">
                <div className=" py-16 px-10 flex  w-full flex-col rounded-3xl bg-slate-200 bg-opacity-20 shadow">
                   <form onSubmit={handleLogIn} className=" space-y-8  text-center">
                      <div className="group relative">
@@ -90,8 +90,7 @@ const LoginPage = () => {
                      <button className="h-14 w-full rounded-3xl bg-blue-900 text-white transition-all duration-300 hover:bg-blue-800">Login</button>
                      
                      <div className="space-y-3">
-                        <a 
-                           href="#" className="inline-flex !w-auto justify-center font-medium text-white">Forgot password?</a>
+                        
                         <p className="gap-2 text-center text-white">
                            <span>Do not have an account? </span>
                            <Link to="/signup" className="font-semibold text-blue-900 hover:text-blue-600">Sign up</Link>

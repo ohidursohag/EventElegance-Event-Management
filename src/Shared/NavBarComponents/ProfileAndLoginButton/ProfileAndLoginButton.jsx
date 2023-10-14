@@ -27,7 +27,7 @@ const ProfileAndLoginButton = () => {
                      <figure className='w-10 h-10 border border-gray-400 rounded-full'>
                         <img className='w-10 rounded-full' src={user?.photoURL || userLogo} alt="" />
                      </figure>
-                     <p className='text-gray-400'>{user?.displayName || 'user name'}</p>
+                     <p className='text-gray-400'>{user?.displayName.slice(0,16) || 'user name'}</p>
                   </div>
                   <Link onClick={handleSignOut}
                      to='/' >

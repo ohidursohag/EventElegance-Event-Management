@@ -1,12 +1,13 @@
 import NavLinks from "../NavLinks/NavLinks";
 import navLogo from '../../../assets/logo/Color logo.png'
 import ProfileAndLoginButton from "../ProfileAndLoginButton/ProfileAndLoginButton";
+import { Link } from "react-router-dom";
 const NavBar = () => {
    return (
       <div className="flex items-center justify-between ">
-         <figure>
+         <Link to='/'>
             <img className="w-[250px]" src={navLogo} alt="logo" />
-         </figure>
+         </Link>
          <NavLinks></NavLinks>
          <ProfileAndLoginButton></ProfileAndLoginButton>
       </div>
