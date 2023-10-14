@@ -67,7 +67,7 @@ const LoginPage = () => {
       <div >
          <div className="flex min-h-[calc(100vh-100px)] items-center justify-center">
             <div className="relative h-auto w-[450px]  rounded-3xl bg-orange-500">
-               <div className=" py-16 px-10 flex  w-full flex-col rounded-3xl backdrop-blur-md bg-slate-500/20 shadow">
+               <div className=" py-16 px-10 flex  w-full flex-col rounded-3xl bg-slate-200 bg-opacity-20 shadow">
                   <form onSubmit={handleLogIn} className=" space-y-8  text-center">
                      <div className="group relative">
                         <input                        

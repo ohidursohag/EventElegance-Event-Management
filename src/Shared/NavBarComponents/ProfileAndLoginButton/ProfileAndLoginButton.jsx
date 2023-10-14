@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import userLogo from '../../../assets/images/user.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 const ProfileAndLoginButton = () => {
    const { user, logOut } = useContext(AuthContext)
-
+   const location = useLocation()
+   console.log(location);
    const handleSignOut = () => {
       logOut()
          .then(() => {
@@ -30,11 +31,11 @@ const ProfileAndLoginButton = () => {
                   </div>
                   <Link onClick={handleSignOut}
                      to='/' >
-                     <button className='px-8 py-[6px] bg-[#403F3F] text-white rounded' >Log Out</button>
+                     <button className='px-8 py-[6px] text-xl font-medium  text-[#D79E70] rounded' >Log Out</button>
                   </Link>
                </div>
-               : <Link to='/login'>
-                  <button className='px-8 py-[6px] bg-[#403F3F] text-white rounded' >Login</button>
+               : <Link to={location.pathname === '/login' ? '/signup' : location.pathname === '/signup' ? '/login' : '/login'}>
+                  <button className={`px-8 py-[6px] font-medium text-xl  text-[#D79E70] rounded `} >{location.pathname === '/login' ? 'SignUp' : location.pathname === '/signup'? 'Login': 'Login'}</button>
                </Link>
          }
          </div>

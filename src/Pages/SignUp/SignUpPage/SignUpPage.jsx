@@ -9,6 +9,7 @@ const SignUpPage = () => {
    const [showPass, setShowPass] = useState(false);
    const { registerWithEmailPass, googleLogin, githubLogin } = useContext(AuthContext)
    const navigate = useNavigate()
+   
    const handleSignUp = (e) => {
       e.preventDefault();
       const form = new FormData(e.currentTarget)
