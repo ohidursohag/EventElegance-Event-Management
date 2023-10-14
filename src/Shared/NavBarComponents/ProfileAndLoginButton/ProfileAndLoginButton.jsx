@@ -2,12 +2,23 @@ import { Link } from 'react-router-dom';
 import userLogo from '../../../assets/images/user.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 const ProfileAndLoginButton = () => {
    const { user, logOut } = useContext(AuthContext)
+
+   const handleSignOut = () => {
+      logOut()
+         .then(() => {
+            Swal.fire({
+               icon: 'success',
+               title: 'Sucessfully logged Out',
+            })
+         })
+         .catch(err => {console.error(err.message) })
+   }
    console.log(user);
    return (
       <div>
-
          {
             user
                ? <div className='flex gap-2 items-center '>
@@ -17,7 +28,7 @@ const ProfileAndLoginButton = () => {
                      </figure>
                      <p className='text-gray-400'>{user?.displayName || 'user name'}</p>
                   </div>
-                  <Link onClick={logOut}
+                  <Link onClick={handleSignOut}
                      to='/' >
                      <button className='px-8 py-[6px] bg-[#403F3F] text-white rounded' >Log Out</button>
                   </Link>
