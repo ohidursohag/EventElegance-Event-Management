@@ -13,12 +13,7 @@ const NavLinks = () => {
             <li>
                <NavLink className={({ isActive }) => isActive ? 'text-pink-500 underline' : ''} to='/career'>Career</NavLink>
             </li>
-            <li>
-               <NavLink className={({ isActive }) => isActive ? 'text-pink-500 underline' : ''} to='/login'>Login</NavLink>
-            </li>
-            <li>
-               <NavLink className={({ isActive }) => isActive ? 'text-pink-500 underline' : ''} to='/signup'>Register</NavLink>
-            </li>
+           
          </ul>
       </div>
    );

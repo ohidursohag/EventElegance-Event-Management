@@ -11,11 +11,12 @@ const SignUpPage = () => {
    const navigate = useNavigate()
    const handleSignUp = (e) => {
       e.preventDefault();
-      const name = e.target.name.value;
-      const photo = e.target.photo.value;
-      const email = e.target.email.value;
-      const password = e.target.password.value;
-      const terms = e.target.terms.checked;
+      const form = new FormData(e.currentTarget)
+      const name = form.get('name')
+      const photo = form.get('photoUrl')
+      const email = form.get('email')
+      const password = form.get('password')
+      const terms = form.get('terms')
       console.log(email, password, terms, name, photo);
 
       if (password.length < 6) {
@@ -50,7 +51,7 @@ const SignUpPage = () => {
       // Create a new user account
       registerWithEmailPass(email, password)
          .then(result => {
-            // console.log(result.user);
+            console.log(result.user);
             updateProfile(result.user, { displayName: name, photoURL: photo })
                .then(result => { console.log(result.user) })
                .catch(error => { console.error(error.message) })
@@ -78,20 +79,20 @@ const SignUpPage = () => {
 
                <div className=" py-10 px-10 flex  w-full flex-col rounded-3xl bg-slate-200 bg-opacity-20 shadow">
                   <form onSubmit={handleSignUp} className="text-center">
-                     <div className="group relative mb-5">
+                     <div className="group relative mb-7">
                         <input type="text" id="name" name="name" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
                         <label htmlFor="name" className="absolute left-2 top-0 flex h-full transform items-center pl-2 text-base transition-all duration-500 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white">Your Name</label>
                      </div>
-                     <div className="group relative mb-5">
+                     <div className="group relative mb-7">
                         <input type="url" id="photoUrl" name="photoUrl" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
                         <label htmlFor="photoUrl" className="absolute left-2 top-0 flex h-full transform items-center pl-2 text-base transition-all duration-500 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white">Photo URL</label>
                      </div>
-                     <div className="group relative mb-5">
+                     <div className="group relative mb-7">
                         <input type="email" id="email" name="email" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
                         <label htmlFor="email" className="absolute left-2 top-0 flex h-full transform items-center pl-2 text-base transition-all duration-500 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white">Email</label>
                      </div>
 
-                     <div className="group relative mb-5">
+                     <div className="group relative mb-7">
                         <input type={showPass ? 'text' : 'password'} name="password" id="password" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
                         <label htmlFor="password" className="absolute left-2 top-0 flex h-full transform items-center pl-2 text-base transition-all duration-500 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white">Password</label>
 
@@ -107,7 +108,7 @@ const SignUpPage = () => {
                         <label htmlFor="terms" className=" text-gray-600 ml-1">I agree to the <a href="#" className="text-blue-500 hover:text-blue-600">terms and conditions</a></label>
                      </div>
 
-                     <button type="submit" className="h-14 mb-5 w-full rounded-3xl bg-blue-900 text-white transition-all duration-300 hover:bg-blue-800">Sign Up</button>
+                     <button type="submit" className="h-14 mb-7 w-full rounded-3xl bg-blue-900 text-white transition-all duration-300 hover:bg-blue-800">Sign Up</button>
 
                      <p className="gap-2 text-center text-white">
                         <span>Already have an account? </span>
