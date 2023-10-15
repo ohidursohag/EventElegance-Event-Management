@@ -4,12 +4,21 @@ import ProfileAndLoginButton from "../ProfileAndLoginButton/ProfileAndLoginButto
 import { Link } from "react-router-dom";
 const NavBar = () => {
    return (
-      <div className="flex items-center justify-between ">
-         <Link to='/'>
-            <img className="w-[250px]" src={navLogo} alt="logo" />
-         </Link>
-         <NavLinks></NavLinks>
-         <ProfileAndLoginButton></ProfileAndLoginButton>
+      <div className="flex flex-col lg:flex-row items-center sm:items-stretch lg:items-center justify-between py-10 gap-4">
+         <div className="sm:flex sm:justify-between sm:items-center ">
+            <Link to='/'>
+               <img className="w-[250px] mb-5" src={navLogo} alt="logo" />
+            </Link>
+            <div className="hidden sm:block lg:hidden">
+               <ProfileAndLoginButton></ProfileAndLoginButton>
+            </div>
+         </div>
+         <div>
+            <NavLinks></NavLinks>
+         </div>
+         <div className="sm:hidden lg:block">
+            <ProfileAndLoginButton></ProfileAndLoginButton>
+         </div>
       </div>
    );
 };

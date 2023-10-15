@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import userLogo from '../../../assets/images/user.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
@@ -34,9 +34,9 @@ const ProfileAndLoginButton = () => {
                      <button className='px-8 py-[6px] text-xl font-medium  text-[#D79E70] rounded' >Log Out</button>
                   </Link>
                </div>
-               : <Link to={location.pathname === '/login' ? '/signup' : location.pathname === '/signup' ? '/login' : '/login'}>
+               : <NavLink to={location.pathname === '/login' ? '/signup' : location.pathname === '/signup' ? '/login' : '/login'}>
                   <button className={`px-8 py-[6px] font-medium text-xl  text-[#D79E70] rounded `} >{location.pathname === '/login' ? 'SignUp' : location.pathname === '/signup'? 'Login': 'Login'}</button>
-               </Link>
+               </NavLink>
          }
          </div>
    );
