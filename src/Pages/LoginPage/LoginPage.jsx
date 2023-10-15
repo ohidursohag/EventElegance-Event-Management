@@ -3,7 +3,7 @@ import {  useContext, useState } from "react";
 
 
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { AuthContext } from "../../../Providers/AuthProvider";
+import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const LoginPage = () => {

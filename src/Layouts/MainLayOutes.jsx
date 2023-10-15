@@ -21,8 +21,10 @@ const MainLayOutes = () => {
    }, [loc.pathname, loc.state])
    
    return (
-      <div className="container mx-auto">
-         <NavBar></NavBar>
+      <div className="">
+         <div className="container mx-auto absolute z-50 inset-x-0">
+            <NavBar></NavBar>
+         </div>
          <div >
             {
                navigation.state === 'loading' ? <LoadingAnimation /> : <Outlet></Outlet>
