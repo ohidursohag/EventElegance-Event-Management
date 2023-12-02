@@ -16,13 +16,13 @@ const MainLayOutes = () => {
          document.title = loc.state
       }
       else {
-         document.title = `${toSentenceCase(loc.pathname.replace('/', ''))}`
+         document.title = `${toSentenceCase(loc?.pathname?.replace('/', ''))}`
       }
    }, [loc.pathname, loc.state])
    
    return (
       <div className="">
-         <div className="container mx-auto absolute z-50 inset-x-0">
+         <div className="backdrop-blur-sm bg-gray-700/40  mx-auto absolute z-50 inset-x-0">
             <NavBar></NavBar>
          </div>
          <div >

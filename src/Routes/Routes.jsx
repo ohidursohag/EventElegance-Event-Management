@@ -12,19 +12,19 @@ const myCreatedRoutes = createBrowserRouter([
       errorElement: <ErrorHandlePage></ErrorHandlePage>,
       children: [
          {
-            path: "/",
+            index:true,
             element: <HomePage/>
-         },
-         {
-            path: "/signup",
-            element: <SignUpPage/>
-         },
-         {
-            path: "/login",
-            element: <LoginPage/>
-         },
-      ]
-   }
+         },         
+      ],
+   },
+   {
+      path: "/signup",
+      element: <SignUpPage />
+   },
+   {
+      path: "/login",
+      element: <LoginPage />
+   },
 ])
 
 export default myCreatedRoutes;

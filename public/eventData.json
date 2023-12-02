@@ -2,8 +2,8 @@
   {
     "id": 1,
     "CategoryName": "Weddings",
-    "thumbnailImage": "weddings-thumbnail.jpg",
-    "image": "weddings-image.jpg",
+    "thumbnailImage": "https://www.weddingsinhouston.com/blog/wp-content/uploads/2022/06/Margaret-Harry_AmabyAisha_Astorian_JacksonandCo_PlantsNPetals20210904_0347-768x999.jpg",
+    "image": "https://noorevents.com/wp-content/upload/2023/02/NOOR_PASENDA_CALIFORNIA_WEDDING_PHOTOGRAPHY_NICOLEMARCO_ENCOR_STUDIO_SP-37-copy.jpg",
     "price": "$2,500 - $5,000",
     "shortDescription": "Transform your special day into a timeless masterpiece with our exquisite wedding planning services. From venue selection to elegant decor, we ensure every detail is perfect.",
     "detailsDescription": "At EventElegance, we specialize in crafting unforgettable weddings that reflect your unique style and love story. Our dedicated team works closely with you to create a wedding day that surpasses your dreams. We handle everything from venue selection, decor, and floral arrangements to coordinating the perfect entertainment and catering. With attention to the smallest details, we guarantee a seamless, stress-free experience on your big day. Let us bring your vision to life and create cherished memories that will last a lifetime."
@@ -11,8 +11,8 @@
   {
     "id": 2,
     "CategoryName": "Birthday Parties",
-    "thumbnailImage": "birthday-parties-thumbnail.jpg",
-    "image": "birthday-parties-image.jpg",
+    "thumbnailImage": "https://www.7eventzz.com/public/media/original-images/1644230115_0.jpg",
+    "image": "https://getpaidstock.com/tmp/[GetPaidStock.com]-656acdc5b5780.jpg",
     "price": "$500 - $2,000",
     "shortDescription": "Make your birthday celebration unforgettable with our expert planning services. From themed decor to fun activities, we'll create a party that wows your guests.",
     "detailsDescription": "EventElegance specializes in curating spectacular birthday parties that leave a lasting impression. Whether it's a milestone birthday or a themed celebration, we bring your ideas to life. We handle everything from selecting the perfect venue and designing unique decor to arranging entertainment and coordinating delicious catering. Your special day should be filled with joy and laughter, and our team ensures it's a stress-free experience for you and your guests. Let us make your birthday wishes come true."
@@ -20,8 +20,8 @@
   {
     "id": 3,
     "CategoryName": "Anniversaries",
-    "thumbnailImage": "anniversaries-thumbnail.jpg",
-    "image": "anniversaries-image.jpg",
+    "thumbnailImage": "https://i.pinimg.com/736x/99/58/44/995844381f1c44073b929e3afd41f49e.jpg",
+    "image": "https://london.bridestory.com/images/v1/assets/wedding-poolside-gdRz35eDW/verwood-hotel-and-serviced-residence_wedding-anniversary-party-pool-side_1.jpg",
     "price": "$1,200 - $3,000",
     "shortDescription": "Celebrate your love story with an anniversary event that radiates romance and sentiment. Our team creates beautiful, personalized anniversaries that you'll cherish forever.",
     "detailsDescription": "At EventElegance, we understand the significance of anniversaries in a couple's life. We specialize in planning and executing romantic and intimate anniversary celebrations. Our services include selecting the perfect setting, crafting sentimental decor, arranging live music or entertainment, and ensuring a delectable dining experience. We're here to bring your love story to life, creating an anniversary celebration that's as unique as your relationship. Make your milestone unforgettable with EventElegance."
@@ -29,8 +29,8 @@
   {
     "id": 4,
     "CategoryName": "Engagement Parties",
-    "thumbnailImage": "engagement-parties-thumbnail.jpg",
-    "image": "engagement-parties-image.jpg",
+    "thumbnailImage": "https://shaadiwish.com/blog/wp-content/uploads/2021/01/engagement-ceremony.jpg",
+    "image": "https://www.bellanaijaweddings.com/wp-content/uploads/2023/05/Retmun-Ayodeji-Surprise-Proposal-BellaNaija-Weddings06.jpg",
     "price": "$800 - $2,500",
     "shortDescription": "Begin your journey to forever with a stunning engagement party. We design memorable events that mark this special moment in your love story.",
     "detailsDescription": "Your engagement party should set the tone for your journey to marriage, and EventElegance ensures it's nothing short of spectacular. We focus on creating engagement parties that capture the excitement and love in the air. From venue selection to decor, entertainment, and catering, we take care of all the details. We want to make sure your engagement is celebrated in style and with joy, so you can cherish the memories forever."
@@ -38,18 +38,18 @@
   {
     "id": 5,
     "CategoryName": "Retirement Parties",
-    "thumbnailImage": "retirement-parties-thumbnail.jpg",
-    "image": "retirement-parties-image.jpg",
-    "price": "$1,000 - $2,500",
+    "thumbnailImage": "https://getpaidstock.com/tmp/[GetPaidStock.com]-656ad3f46ffdf.jpg",
+    "image": "https://www.homehaps.com/cdn/shop/articles/RETIREMENT-PARTY-IDEAS-HEADER_1100x.jpg?v=1657358785",
+    "price": "$500 - $1,500",
     "shortDescription": "Celebrate a successful career and a new chapter in life with a memorable retirement party. We create events that honor your achievements and aspirations.",
     "detailsDescription": "Retirement is a milestone worth celebrating, and EventElegance specializes in planning retirement parties that reflect your career achievements and future aspirations. From venue selection and decor to arranging speeches, entertainment, and catering, we ensure your retirement party is a memorable occasion. Let us handle the details so you can focus on enjoying this well-deserved celebration with family and friends."
   },
   {
     "id": 6,
     "CategoryName": "Baby Shower",
-    "thumbnailImage": "baby-shower-thumbnail.jpg",
-    "image": "baby-shower-image.jpg",
-    "price": "$400 - $1,200",
+    "thumbnailImage": "https://www.revistaestilo.net/binrepository/800x1200/0c0/0d0/none/179468266/UAAV/img-8035_4112724_20230328110611.jpg",
+    "image": "https://cookingenie.com/content/wp-content/uploads/2022/08/baby-shower-blog-image.png",
+    "price": "$500 - $1,200",
     "shortDescription": "Welcome the arrival of your little one with a heartwarming baby shower. We design baby showers that are filled with love, joy, and adorable moments.",
     "detailsDescription": "EventElegance specializes in creating heartwarming and adorable baby showers to celebrate the upcoming arrival of your bundle of joy. From selecting a cozy venue to designing decor with cute baby themes, planning fun activities, and ensuring a delicious spread, we take care of it all. Our goal is to make your baby shower a memorable and heartwarming event that will create wonderful memories for you and your loved ones."
   }

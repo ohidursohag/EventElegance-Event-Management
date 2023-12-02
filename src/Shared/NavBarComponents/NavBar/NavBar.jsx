@@ -4,7 +4,7 @@ import ProfileAndLoginButton from "../ProfileAndLoginButton/ProfileAndLoginButto
 import { Link } from "react-router-dom";
 const NavBar = () => {
    return (
-      <div className="flex flex-col lg:flex-row items-center sm:items-stretch lg:items-center justify-between pt-5 gap-4 backdrop-blur-sm bg-white/5">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center sm:items-stretch lg:items-center justify-between pt-5 gap-4 ">
          <div className="sm:flex sm:justify-between sm:items-center ">
             <Link to='/'>
                <img className="w-[250px] mb-5" src={navLogo} alt="logo" />
