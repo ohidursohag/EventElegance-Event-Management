@@ -5,6 +5,7 @@ import {  useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const LoginPage = () => {
  const [showPass, setShowPass] = useState(false);
@@ -67,8 +68,11 @@ const LoginPage = () => {
 
    return (
       <div >
-         <div className="flex min-h-[calc(100vh-100px)] items-center justify-center ">
-            <div className="relative  w-[350px] sm:w-[450px]  rounded-3xl bg-orange-500">
+         <Helmet>
+            <title>Event Elegance | Login</title>
+         </Helmet>
+         <div style={{ backgroundImage: `url('https://balboapark.org/wp-content/uploads/2022/09/AdobeStock_460848466.jpeg')`}} className="flex min-h-screen items-center justify-center bg-cover bg-no-repeat bg-center ">
+            <div className="relative  w-[350px] sm:w-[450px]  rounded-3xl bg-[#DCB342]/60 backdrop-blur-sm">
                <div className=" py-16 px-5 sm:px-10 flex  w-full flex-col rounded-3xl bg-slate-200 bg-opacity-20 shadow">
                   <form onSubmit={handleLogIn} className=" space-y-8  text-center">
                      <div className="group relative">

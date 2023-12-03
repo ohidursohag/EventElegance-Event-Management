@@ -1,35 +1,29 @@
 import { Outlet, useLocation, useNavigation } from "react-router-dom";
-import NavBar from "../Shared/NavBarComponents/NavBar/NavBar";
 import LoadingAnimation from "../Components/LoadingAnimation/LoadingAnimation";
 import { useEffect } from "react";
 import toSentenceCase from "../Utilities/toSentenceCase";
+import Footer from "../Shared/Footer/Footer";
+import NavBar from "../Shared/NavbarComponents/NavBar";
+import SideBar from "../Shared/NavbarComponents/SideBar";
 
 const MainLayOutes = () => {
    const navigation = useNavigation()
-
-   const loc = useLocation()
-
-   useEffect(() => {
-      if (loc.pathname === '/') {
-         document.title = `EventElegance | Home`
-      } else if (loc.state) {
-         document.title = loc.state
-      }
-      else {
-         document.title = `${toSentenceCase(loc?.pathname?.replace('/', ''))}`
-      }
-   }, [loc.pathname, loc.state])
-   
+ 
    return (
-      <div className="">
-         <div className="backdrop-blur-sm bg-gray-700/40  mx-auto absolute z-50 inset-x-0">
-            <NavBar></NavBar>
+      <div className="drawer text-white drawer-end font-roboto-slab">
+         <input id="my-drawer-3" type="checkbox" className="drawer-toggle " />
+         <div className="drawer-content flex flex-col">
+            {/* Navbar */}
+            <NavBar />
+            {/* Page content here */}
+            <div>
+               {
+                  navigation.state === 'loading' ? <LoadingAnimation /> : <Outlet></Outlet>
+               }
+            </div>
+            <Footer />
          </div>
-         <div >
-            {
-               navigation.state === 'loading' ? <LoadingAnimation /> : <Outlet></Outlet>
-            }
-         </div>
+         <SideBar></SideBar>
       </div>
    );
 };

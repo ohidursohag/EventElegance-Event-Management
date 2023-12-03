@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 
 const Title = ({ children }) => {
   return (
-    <div className="relative border-s-8 border-[#facc4c] ps-3 font-aladin">
-      <h2 className="text-4xl sm:text-5xl md:text-7xl text-[#282531] font-bold font-roboto-slab">{children}</h2>
+    <div className="relative border-s-8 border-[#facc4c] my-5 ps-3 font-aladin">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#282531] font-bold font-roboto-slab">{children}</h2>
     </div>
   );
 };

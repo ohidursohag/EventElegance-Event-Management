@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const SignUpPage = () => {
    const [showPass, setShowPass] = useState(false);
@@ -104,8 +105,11 @@ const SignUpPage = () => {
    }
    return (
       <div>
-         <div className="flex min-h-[calc(100vh-100px)] items-center justify-center mb-10">
-            <div className="relative w-[350px] sm:w-[450px]  rounded-3xl bg-orange-500">
+         <Helmet>
+            <title>Event Elegance | SignUp</title>
+         </Helmet>
+         <div style={{ backgroundImage: `url('https://balboapark.org/wp-content/uploads/2022/09/AdobeStock_460848466.jpeg')` }} className="flex min-h-screen items-center justify-center mb-10 bg-cover bg-no-repeat bg-center">
+            <div className="relative w-[350px] sm:w-[450px]  rounded-3xl bg-[#DCB342]/60 backdrop-blur-sm">
 
                <div className=" py-10 px-5 sm:px-10 flex  w-full flex-col rounded-3xl bg-slate-200 bg-opacity-20 shadow">
                   <form onSubmit={handleSignUp} className="text-center">

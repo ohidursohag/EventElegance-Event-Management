@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "reviewerName": "Alice Johnson",
+    "reviewerImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Alice_Johnson_-_2019_State_of_the_Union_Guests_%2840035011983%29_%28cropped%29.jpg/800px-Alice_Johnson_-_2019_State_of_the_Union_Guests_%2840035011983%29_%28cropped%29.jpg",
+    "rating": 4.8,
+    "reviewText": "Their attention to detail was exceptional! The wedding was a dream come true. Highly recommended."
+  },
+  {
+    "id": 2,
+    "reviewerName": "John Smith",
+    "reviewerImage": "https://dice-i-scdn-co.imgix.net/image/ab6761610000e5eb985f78303ccc958452778110",
+    "rating": 4.5,
+    "reviewText": "Beautifully executed wedding plans. They made our day unforgettable."
+  },
+  {
+    "id": 3,
+    "reviewerName": "Emily Davis",
+    "reviewerImage": "https://shoutoutla.com/wp-content/uploads/2021/08/c-PersonalEmilyDavis__Me0505212965_1621444328813.jpg",
+    "rating": 4.7,
+    "reviewText": "They brought so much joy to our kid's birthday party! Everything was perfect."
+  },
+  {
+    "id": 4,
+    "reviewerName": "Michael Brown",
+    "reviewerImage": "https://media0029.elcinema.com/uploads/_315x420_a950189bbf2d40bed598f172afd9df2e0ab4fdc119f2483bc084109efa99d76d.jpg",
+    "rating": 4.3,
+    "reviewText": "Great themes and fantastic arrangements for the birthday bash. Loved their creativity!"
+  },
+  {
+    "id": 5,
+    "reviewerName": "Olivia Garcia",
+    "reviewerImage": "https://media.licdn.com/dms/image/D5603AQFy43wOHSWRiA/profile-displayphoto-shrink_800_800/0/1665524958294?e=2147483647&v=beta&t=0Ozs0YDqoMfq3O5mOUOdfgXZ8WMc6-15O2ZXloK7V4A",
+    "rating": 4.6,
+    "reviewText": "They captured the essence of our love story in every detail. Truly heartwarming!"
+  },
+  {
+    "id": 6,
+    "reviewerName": "William Martinez",
+    "reviewerImage": "https://i1.rgstatic.net/ii/profile.image/11431281102717168-1669520804567_Q512/Dan-William-Martinez.jpg",
+    "rating": 4.4,
+    "reviewText": "Our anniversary celebration was perfect! Thank you for making it so special."
+  },
+  {
+    "id": 7,
+    "reviewerName": "Sophia Thompson",
+    "reviewerImage": "https://miamioh.edu/regionals/news-events/_files/images/2022/09/sophia-thompson-600x600.jpg",
+    "rating": 4.9,
+    "reviewText": "They exceeded our expectations! The engagement party was beyond magical."
+  },
+  {
+    "id": 8,
+    "reviewerName": "Daniel Wilson",
+    "reviewerImage": "https://www.gse.harvard.edu/sites/default/files/styles/1x1__focal_point_scale_and_crop__lg/public/faculty/images/daniel-wilson-695.jpg",
+    "rating": 4.2,
+    "reviewText": "Lovely decorations and a fantastic atmosphere. Great experience overall."
+  },
+  {
+    "id": 9,
+    "reviewerName": "Ava Anderson",
+    "reviewerImage": "https://images.inc.com/uploaded_files/image/1920x1080/ava-anderson-pano_53912.jpg",
+    "rating": 4.6,
+    "reviewText": "They made the retirement party so memorable. Truly appreciated their efforts."
+  },
+  {
+    "id": 10,
+    "reviewerName": "James Wilson",
+    "reviewerImage": "https://imagescdn.homes.com/i2/ufAjXOz3cbPLMiW5LUP7XmXLiIMf2OsNALKMjT8gj5k/117/image.jpg",
+    "rating": 4.0,
+    "reviewText": "Good arrangements and a pleasant ambiance. Made the retiree feel special!"
+  },
+  {
+    "id": 11,
+    "reviewerName": "Chloe Harris",
+    "reviewerImage": "https://api.curtisbrown.co.uk/media/67404/show/328x328",
+    "rating": 4.5,
+    "reviewText": "Absolutely adorable baby shower decor! It was a delight for everyone."
+  },
+  {
+    "id": 12,
+    "reviewerName": "Ethan Clark",
+    "reviewerImage": "https://global-uploads.webflow.com/64f0cedf7dcdd6c639b6b47a/64f0cedf7dcdd6c639b6c617_Screen%20Shot%202021-10-01%20at%2010.35.14%20PM.png",
+    "rating": 4.3,
+    "reviewText": "They made the mom-to-be feel extra special. Great coordination and lovely setup."
+  }
+]

@@ -2,7 +2,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 const BannerSlider = () => {
    return (
-      <div className="!h-screen">
+      <div className="!h-screen overflow-hidden">
          <Carousel showArrows={true} autoPlay={true} infiniteLoop={true} interval={2000} dynamicHeight={false} showThumbs={false} swipeable={true} transitionTime={500} stopOnHover={false}>
             <div className="!h-screen bg-black/50 bg-[url('https://i.ibb.co/2SsKPs9/wedding-Banner.jpg')] bg-blend-overlay bg-center bg-cover">
                

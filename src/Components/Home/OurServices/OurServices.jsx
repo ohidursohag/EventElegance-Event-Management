@@ -5,7 +5,7 @@ import Title from "../../Utilities/Title";
 
 const OurServices = () => {
    const serviceData = useServicesData()
-   console.log(serviceData);
+   // console.log(serviceData);
 return(
    <div className="my-16 px-2">
       <Title>Our Services</Title>
