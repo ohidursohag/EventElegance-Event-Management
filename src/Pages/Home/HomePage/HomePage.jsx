@@ -15,11 +15,11 @@ const HomePage = () => {
             <title>Event Elegance | Home</title>
          </Helmet>
          <BannerSlider></BannerSlider>
+         <Testimonial/>
          <Container >
             <OurServices/>
             <OurPastEvents/>
          </Container>
-         <Testimonial/>
       </div>
    );
 };

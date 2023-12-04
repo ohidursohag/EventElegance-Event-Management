@@ -6,6 +6,7 @@ import SignUpPage from "../Pages/SignUpPage/SignUpPage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import PrivaeRoute from "./PrivaeRoute";
+import AboutUS from "../Pages/AboutUS/AboutUS";
 
 const myCreatedRoutes = createBrowserRouter([
    {
@@ -22,6 +23,10 @@ const myCreatedRoutes = createBrowserRouter([
             element: <PrivaeRoute>
                <ServiceDetails />
             </PrivaeRoute>
+         },
+         {
+            path: 'about-us',
+            element:<AboutUS/>
          }
       ],
    },

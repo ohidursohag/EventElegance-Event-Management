@@ -10,9 +10,9 @@ const NavLinks = () => {
          <NavLink to="/about-us" className={({ isActive }) => isActive ? 'btn bg-[#DCB342]/70 text-lg hover:bg-[#DCB342] text-black border-none btn-primary btn-sm rounded-[4px] normal-case' : 'btn rounded-[4px] btn-ghost btn-sm text-lg normal-case text-white'}>
             About Us
          </NavLink>
-         <NavLink to="/blog" className={({ isActive }) => isActive ? 'btn btn-primary bg-[#DCB342]/70 text-lg hover:bg-[#DCB342] text-black border-none btn-sm rounded-[4px] normal-case' : 'btn rounded-[4px] btn-ghost btn-sm text-lg normal-case text-white'}>
+         {/* <NavLink to="/blog" className={({ isActive }) => isActive ? 'btn btn-primary bg-[#DCB342]/70 text-lg hover:bg-[#DCB342] text-black border-none btn-sm rounded-[4px] normal-case' : 'btn rounded-[4px] btn-ghost btn-sm text-lg normal-case text-white'}>
             Blog
-         </NavLink>        
+         </NavLink>         */}
       </>
    )}
 export default NavLinks;

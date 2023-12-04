@@ -3,7 +3,7 @@ import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
 
 const ReviewCard = ({ review }) => {
-console.log(review);
+// console.log(review);
    const { reviewerName, reviewerImage, reviewText, rating } = review || {};
    // console.log(review);
    return(

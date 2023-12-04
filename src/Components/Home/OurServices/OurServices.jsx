@@ -12,7 +12,7 @@ return(
       
       <div className="grid grid-cols-1 xl:grid-cols-2  gap-5  mt-4"> 
          {
-            serviceData?.map(service => <ServiceCard key={service?.id} service={service} />)
+            serviceData?.map((service,index) => <ServiceCard key={service?.id} service={service} index={index}/>)
          }         
       </div>
    </div>

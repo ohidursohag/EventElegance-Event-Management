@@ -1,9 +1,14 @@
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = ({ service,index }) => {
+   AOS.init({
+      duration: 1500,
+   })
 //   console.log(service);
    return (
-      <div className=" flex flex-col sm:flex-row sm:p-4  bg-white shadow-md border border-[#D79E70]/20 rounded-xl text-gray-700 bg-clip-border mb-7">
+      <div data-aos={(index + 1) % 2 === 0 ? 'fade-left' :'fade-right'} className=" flex flex-col sm:flex-row sm:p-4  bg-white shadow-md border border-[#D79E70]/20 rounded-xl text-gray-700 bg-clip-border mb-7">
          <div className="overflow-hidden text-gray-700 bg-white shadow-lg rounded-xl bg-clip-border h-[350px] sm:w-[40%]">
             <img className='w-full h-full object-cover object-center' src={service?.thumbnailImage} alt="profile-picture" />
          </div>
@@ -27,9 +32,11 @@ const ServiceCard = ({ service }) => {
 }
 
 
+
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 ServiceCard.propTypes = {
    service: PropTypes.object,
+   index: PropTypes.number
 }
 export default ServiceCard;

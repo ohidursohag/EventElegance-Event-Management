@@ -1,12 +1,16 @@
 import { Carousel } from "react-responsive-carousel";
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 const BannerSlider = () => {
+  
    return (
       <div className="!h-screen overflow-hidden">
          <Carousel showArrows={true} autoPlay={true} infiniteLoop={true} interval={2000} dynamicHeight={false} showThumbs={false} swipeable={true} transitionTime={500} stopOnHover={false}>
             <div className="!h-screen bg-black/50 bg-[url('https://i.ibb.co/2SsKPs9/wedding-Banner.jpg')] bg-blend-overlay bg-center bg-cover">
                
-               <p className="absolute inset-x-0 top-[calc(70%-100px)] sm:top-[calc(60%-100px)] md:top-[calc(50%-100px)] text-[35px] sm:text-[50px] md:text-[80px] font-semibold text-white">Elevate Your Love Story  <br /> <span className="text-[#D79E70]">with Timeless Elegance</span></p>
+               <p 
+                   className="absolute inset-x-0 top-[calc(70%-100px)] sm:top-[calc(60%-100px)] md:top-[calc(50%-100px)] text-[35px] sm:text-[50px] md:text-[80px] font-semibold text-white">Elevate Your Love Story  <br /> <span className="text-[#D79E70]">with Timeless Elegance</span></p>
             </div>
             <div className="!h-screen bg-black/60 bg-[url('https://i.ibb.co/L9vV9q6/Birthday-Party.webp')] bg-blend-overlay bg-center bg-cover relative">
                
