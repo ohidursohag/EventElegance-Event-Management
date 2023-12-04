@@ -17,7 +17,7 @@ const ServiceCard = ({ service }) => {
                </div>
             </div>
             <div className='flex gap-3 items-center justify-between'>
-               <Link to={`/service-details/${service?.id}`} className='btn btn-ghost bg-[#D79E70] hover:bg-[#D79E70] text-white px-10 text-lg'>Details</Link>
+               <Link to={`/service-details/${service?.id}`} className='btn btn-ghost bg-[#D79E70] hover:bg-[#D79E70] text-white sm:px-10 text-lg'>Details</Link>
                <div><span className='text-lg font-bold '></span> <span className='text-xl font-extrabold text-[#D79E70]'>{service?.price}</span></div>
             </div>       
          </div>

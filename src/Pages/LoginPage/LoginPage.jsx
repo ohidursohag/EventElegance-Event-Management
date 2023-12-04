@@ -1,5 +1,5 @@
-import { Link, useNavigate} from "react-router-dom";
-import {  useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 
 
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
@@ -8,9 +8,10 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
 const LoginPage = () => {
- const [showPass, setShowPass] = useState(false);
+   const [showPass, setShowPass] = useState(false);
    const { loginWithEmailPass, googleLogin, githubLogin } = useContext(AuthContext)
    const navigate = useNavigate()
+   const loc = useLocation();
    const handleLogIn = e => {
       e.preventDefault();
       const form = new FormData(e.currentTarget);
@@ -25,7 +26,7 @@ const LoginPage = () => {
                title: 'Sucessfully logged in',
                text: `Welcome!`,
             })
-            navigate('/')
+            navigate(loc.state ? loc.state : '/', { replace: true })
          })
          .catch(error => {
             console.error(error.message);
@@ -46,7 +47,7 @@ const LoginPage = () => {
                icon: 'success',
                title: 'Sucessfully Logged in',
             })
-            navigate('/')
+            navigate(loc.state ? loc.state : '/', { replace: true })
          })
          .catch(error => { console.error(error.message) })
    }
@@ -60,7 +61,7 @@ const LoginPage = () => {
                icon: 'success',
                title: 'Sucessfully Logged in',
             })
-            navigate('/')
+            navigate(loc.state ? loc.state : '/', { replace: true })
          })
          .catch(error => { console.error(error.message) })
    }
@@ -71,12 +72,12 @@ const LoginPage = () => {
          <Helmet>
             <title>Event Elegance | Login</title>
          </Helmet>
-         <div style={{ backgroundImage: `url('https://balboapark.org/wp-content/uploads/2022/09/AdobeStock_460848466.jpeg')`}} className="flex min-h-screen items-center justify-center bg-cover bg-no-repeat bg-center ">
+         <div style={{ backgroundImage: `url('https://balboapark.org/wp-content/uploads/2022/09/AdobeStock_460848466.jpeg')` }} className="flex min-h-screen items-center justify-center bg-cover bg-no-repeat bg-center ">
             <div className="relative  w-[350px] sm:w-[450px]  rounded-3xl bg-[#DCB342]/60 backdrop-blur-sm">
                <div className=" py-16 px-5 sm:px-10 flex  w-full flex-col rounded-3xl bg-slate-200 bg-opacity-20 shadow">
                   <form onSubmit={handleLogIn} className=" space-y-8  text-center">
                      <div className="group relative">
-                        <input                        
+                        <input
                            type="email" name="email" id="username" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
                         <label htmlFor="username" className={`absolute left-2 top-0 flex h-full  items-center pl-2 text-base transform transition-all duration-500 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white`}>Email</label>
                      </div>
@@ -94,9 +95,9 @@ const LoginPage = () => {
 
 
                      <button className="h-14 w-full rounded-3xl bg-blue-900 text-white transition-all duration-300 hover:bg-blue-800">Login</button>
-                     
+
                      <div className="space-y-3">
-                        
+
                         <p className="gap-2 text-center text-white">
                            <span>Do not have an account? </span>
                            <Link to="/signup" className="font-semibold text-blue-900 hover:text-blue-600">Sign up</Link>

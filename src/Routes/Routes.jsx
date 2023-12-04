@@ -5,6 +5,7 @@ import ErrorHandlePage from "../Pages/Error/ErrorHandlePage";
 import SignUpPage from "../Pages/SignUpPage/SignUpPage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
+import PrivaeRoute from "./PrivaeRoute";
 
 const myCreatedRoutes = createBrowserRouter([
    {
@@ -18,7 +19,9 @@ const myCreatedRoutes = createBrowserRouter([
          },
          {
             path: 'service-details/:id',
-            element: <ServiceDetails/>
+            element: <PrivaeRoute>
+               <ServiceDetails />
+            </PrivaeRoute>
          }
       ],
    },

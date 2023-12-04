@@ -1,5 +1,5 @@
 import { updateProfile } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import Swal from "sweetalert2";
@@ -10,7 +10,7 @@ const SignUpPage = () => {
    const [showPass, setShowPass] = useState(false);
    const { registerWithEmailPass, googleLogin, githubLogin } = useContext(AuthContext)
    const navigate = useNavigate()
-   
+   const loc = useLocation()
    const handleSignUp = (e) => {
       e.preventDefault();
       const form = new FormData(e.currentTarget)
@@ -57,12 +57,11 @@ const SignUpPage = () => {
             updateProfile(result.user, { displayName: name, photoURL: photo })
                .then(result => { console.log(result.user) })
                .catch(error => { console.error(error.message) })
-
             Swal.fire({
                icon: 'success',
                title: 'Sucessfully Registered',
             })
-            navigate('/')
+            navigate(loc.state ? loc.state : '/', { replace: true })
          })
          .catch(error => {
             console.error(error.message);
@@ -85,7 +84,7 @@ const SignUpPage = () => {
                   icon: 'success',
                   title: 'Sucessfully Registered',
                })
-               navigate('/')
+               navigate(loc.state ? loc.state : '/', { replace: true })
             })
             .catch(error => { console.error(error.message) })
    }
@@ -99,7 +98,7 @@ const SignUpPage = () => {
                icon: 'success',
                title: 'Sucessfully Registered',
             })
-            navigate('/')
+            navigate(loc.state ? loc.state : '/', { replace: true })
          })
          .catch(error => { console.error(error.message) })
    }
